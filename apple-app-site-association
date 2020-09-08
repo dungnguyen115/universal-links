@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID": "SUG49M587C.jp.bap.dev.yabme",
-                "paths": [ "/universal-links/*"]
+                "paths": [ "/Universal-Links/*"]
             }
         ]
     }
