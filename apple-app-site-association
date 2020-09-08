@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "SUG49M587C.jp.bap.dev.yabme",
+                "paths": [ "/iOS-Universal-Links/*"]
+            }
+        ]
+    }
+}
