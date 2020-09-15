@@ -20,6 +20,7 @@
     </section>
 
     <section class="main-content">
+      <a href="#" onclick="startIThrown()">Test </a>
       <a href="yabme://yabme.jp/movie/145">Home</a>
       </br>
       <a href="https://apps.apple.com/us/app/clash-of-clans/id529479190" data-applink="yabme://yabme.jp/movie/145">Yabme</a>
@@ -35,6 +36,19 @@
           integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
           crossorigin="anonymous"></script>
   <script src="applinks.js"></script>
+function startiThrown() {
+    document.location = appurl;
+    var time = (new Date()).getTime();
+    setTimeout(function(){
+        var now = (new Date()).getTime();
+
+        if((now - time)<400) {
+            if(confirm('You do not seem to have iThrown installed, do you want to go download it now?')){
+            document.location = 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=293049283&mt=8&uo=6';
+            }
+         }
+    }, 300);
+}
   <script>
     $('a[data-applink]').applink();
   </script>
