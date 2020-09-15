@@ -19,19 +19,24 @@
     $('a[data-applink]').applink();
   </script>
     <script>
-      function startiThrown() {
-    document.location = 'yabme://yabme.jp/movie/145';
-    var time = (new Date()).getTime();
-    setTimeout(function(){
-        var now = (new Date()).getTime();
+     var appurl = 'custom://url';
+  var appstore = 'https://itunes.apple.com/us/app/your-app';
 
-        if((now - time)<400) {
-            if(confirm('You do not seem to have iThrown installed, do you want to go download it now?')){
-            document.location = 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=293049283&mt=8&uo=6';
-            }
-         }
-    }, 300);
-}
+  var timeout;
+  function preventPopup() {
+    clearTimeout(timeout);
+    timeout = null;
+    window.removeEventListener('pagehide', preventPopup);
+  }
+  function startApp() {
+    window.location = appurl;
+    timeout = setTimeout(function(){
+      if(confirm('You do not seem to have the App installed, do you want to go download it now?')){
+        document.location = appstore;
+      }
+    }, 1000);
+    window.addEventListener('pagehide', preventPopup);
+  }
     </script>
   </head>
  
