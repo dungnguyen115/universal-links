@@ -8,6 +8,31 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+     <script
+          src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+          crossorigin="anonymous"></script>
+  <script src="applinks.js">
+    </script>
+
+  <script>
+    $('a[data-applink]').applink();
+  </script>
+    <script>
+      function startiThrown() {
+    document.location = appurl;
+    var time = (new Date()).getTime();
+    setTimeout(function(){
+        var now = (new Date()).getTime();
+
+        if((now - time)<400) {
+            if(confirm('You do not seem to have iThrown installed, do you want to go download it now?')){
+            document.location = 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=293049283&mt=8&uo=6';
+            }
+         }
+    }, 300);
+}
+    </script>
   </head>
  
   <body>
@@ -31,26 +56,6 @@
 
     </section>
   </body>
- <script
-          src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-          integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-          crossorigin="anonymous"></script>
-  <script src="applinks.js"></script>
-function startiThrown() {
-    document.location = appurl;
-    var time = (new Date()).getTime();
-    setTimeout(function(){
-        var now = (new Date()).getTime();
 
-        if((now - time)<400) {
-            if(confirm('You do not seem to have iThrown installed, do you want to go download it now?')){
-            document.location = 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=293049283&mt=8&uo=6';
-            }
-         }
-    }, 300);
-}
-  <script>
-    $('a[data-applink]').applink();
-  </script>
 </html>
 
